@@ -1,1 +1,4 @@
-### Link your references in here
+- [http://en.wikipedia.org/wiki/Impuls](http://en.wikipedia.org/wiki/Impuls)
+- [http://www.euclideanspace.com/physics/dynamics/collision/impulse/index.htm](http://www.euclideanspace.com/physics/dynamics/collision/impulse/index.htm)
+- [http://encyclopedia.farlex.com/Impulse+%28physics%29](http://encyclopedia.farlex.com/Impulse+%28physics%29)
+- "Dynamics of structures" by Anil K chopra.
