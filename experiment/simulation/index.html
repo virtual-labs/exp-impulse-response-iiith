@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!-- Add CSS at the head of HTML file -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
@@ -9,7 +8,6 @@
 	</head>
 
 	<body class="page">
-		<!-- Your code goes here-->
 		<div class="columns is-mobile is-centered">
 			<div class="column has-text-centered">
 				<h1 class="title">Impulse Response of S.D.O.F system</h1>
@@ -29,8 +27,8 @@
 				</div>
 
 				<div class="slidecontainer">
-					<p>MASS: <span id="demo_mass"></span></p>
-					<input type="range" min="1" max="6" value="3" class="slider" id="mass">
+					<p>MASS (Tonnes): <span id="demo_mass"></span></p>
+					<input type="range" min="1000" max="6000" value="3000" class="slider" id="mass">
 				</div>
 
 				<button id="play" class="action-button">Play</button>
@@ -50,7 +48,6 @@
 			</div>
 		</div>
 
-		<!-- Add JS at the bottom of HTML file --> 
 		<script src="./js/main.js"></script>
 	</body>
 </html>

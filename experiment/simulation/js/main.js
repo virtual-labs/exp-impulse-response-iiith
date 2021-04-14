@@ -59,10 +59,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	slider_mas.oninput = function() {
 		output_mas.innerHTML = this.value;
-		col = Number(document.getElementById("mass").value);
-		mass_stiff = 0.2 * Number(document.getElementById("lineWidth").value);
+		text = Number(document.getElementById("mass").value);
+		mass_stiff = (0.2 * Number(document.getElementById("mass").value)) / 1000;
 		restart();
 	};	
+
+	function drawBldg(ctx, v)
+	{
+		ctx.beginPath();
+		ctx.moveTo(v[0][0], v[0][1]);
+		for(let ind = 1; ind < v.length; ++ind)
+		{
+			ctx.lineTo(v[ind][0], v[ind][1]);
+		}
+		ctx.closePath();
+		ctx.fill();
+		ctx.stroke();
+	}
 
 	function drawGround(ctx, ground)
 	{
@@ -92,9 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	canvas.style = "border:3px solid";
 	const ctx = canvas.getContext("2d");
 
-	const col_arr= ["#e1fffe", "#b9fffc", "#55fff7", "#00f0e5", "#007872", "#00504c"];
 	const border = "black";
-	let col = 3;
+	const fill = "#55fff7";
 	let fps = 10;
 	let lineWidth = 3.5;
 
@@ -102,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	let scale = 4;
 	let stiff = 1.05;
 	let mass_stiff = 0.6;
+	let text = 3000;
 
 	const up = 400;
 	const buildY = 100;
@@ -144,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	function draw()
 	{
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		ctx.fillStyle = col_arr[col - 1];
+		ctx.fillStyle = fill;
 		ctx.lineWidth = lineWidth;
 		ctx.lineCap = "round";
 		ctx.lineJoin = "round";
@@ -191,35 +204,17 @@ document.addEventListener('DOMContentLoaded', function () {
 			}	
 		}
 
-		//bldgTop
-		ctx.beginPath();
-		ctx.moveTo(bldg[0][0], bldg[0][1]);
-		ctx.lineTo(bldg[1][0], bldg[1][1]);
-		ctx.lineTo(bldg[2][0], bldg[2][1]);
-		ctx.lineTo(bldg[3][0], bldg[3][1]);
-		ctx.closePath();
-		ctx.fill();
-		ctx.stroke();
+		drawBldg(ctx, [bldg[0], bldg[1], bldg[2], bldg[3]]);	//bldgTop
+		drawBldg(ctx, [bldg[1], bldg[4], bldg[5], bldg[2]]);	//bldgSide
+		drawBldg(ctx, [bldg[2], bldg[5], bldg[6], bldg[3]]);	//bldgFront
 
-		//bldgSide
-		ctx.beginPath();
-		ctx.moveTo(bldg[1][0], bldg[1][1]);
-		ctx.lineTo(bldg[4][0], bldg[4][1]);
-		ctx.lineTo(bldg[5][0], bldg[5][1]);
-		ctx.lineTo(bldg[2][0], bldg[2][1]);
-		ctx.closePath();
+		ctx.save();
 		ctx.fill();
-		ctx.stroke();
-
-		//bldgFront
-		ctx.beginPath();
-		ctx.moveTo(bldg[2][0], bldg[2][1]);
-		ctx.lineTo(bldg[5][0], bldg[5][1]);
-		ctx.lineTo(bldg[6][0], bldg[6][1]);
-		ctx.lineTo(bldg[3][0], bldg[3][1]);
-		ctx.closePath();
-		ctx.fill();
-		ctx.stroke();
+		ctx.font = "20px Arial";
+		ctx.fillStyle = "black";
+		ctx.fillText(text , ((2.5 * bldg[3][0]) + bldg[5][0]) / 3.5 , bldg[3][1] * 2.3);
+		ctx.fillText("Tonnes" , ((3 * bldg[3][0]) + bldg[5][0]) / 4 , bldg[3][1] * 2.5);
+		ctx.stroke()
 
 		//Ball
 		ctx.save();
