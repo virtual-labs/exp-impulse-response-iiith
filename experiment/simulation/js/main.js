@@ -8,10 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	playButton.addEventListener('click', function() {  window.clearTimeout(tmHandle); tmHandle = setTimeout(draw, 1000 / fps); });
 	restartButton.addEventListener('click', function() {restart();});
 
-	function restart() 
-	{ 
-		window.clearTimeout(tmHandle); 
-
+	function init()
+	{
 		bldg = [
 			[up, buildY], 
 			[up + build_wid, buildY], 
@@ -23,12 +21,16 @@ document.addEventListener('DOMContentLoaded', function () {
 		];
 
 		ball = [up + build_wid + 300, buildY + 100];
-		
 		dirn = 0;
 		collis = 0;
 		scale = 4;
+	}
 
-		tmHandle = window.setTimeout(draw, 1000 / fps);
+	function restart() 
+	{ 
+		window.clearTimeout(tmHandle); 
+		init();
+		tmHandle = window.setTimeout(draw, 1000 / fps);	
 	}
 
 	const slider_wid = document.getElementById("lineWidth");
@@ -110,8 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	let fps = 10;
 	let lineWidth = 3.5;
 
-	let dirn = 0;
-	let scale = 4;
 	let stiff = 1.05;
 	let mass_stiff = 0.6;
 	let text = 3000;
@@ -122,17 +122,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	const build_wid = 140;
 	const build_3dwid = 35;
 
-	let bldg = [
-		[up, buildY], 
-		[up + build_wid, buildY], 
-		[up + build_wid - build_3dwid, buildY + build_3dwid], 
-		[up - build_3dwid, buildY + build_3dwid], 
-		[up + build_wid, buildY + build_height], 
-		[up + build_wid - build_3dwid, buildY + build_3dwid + build_height], 
-		[up - build_3dwid, buildY + build_3dwid + build_height],
-	];
-
-	let ball = [up + build_wid + 300, buildY + 100];
+	let bldg, ball, dirn, collis, scale;
+	init();
 
 	const startL = 275;
 	const startR = 925;
@@ -153,7 +144,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		{...ground[3]},
 	];
 
-	let collis = 0;
 	function draw()
 	{
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
