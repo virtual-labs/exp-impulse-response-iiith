@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+		<link rel="stylesheet" href="./css/main.css">
+	</head>
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
-</body>
+	<body class="page">
+		<div class="columns is-mobile is-centered">
+			<div class="column has-text-centered">
+				<h1 class="title">Impulse Response of S.D.O.F system</h1>
+			</div>
+		</div>
+
+		<div class="columns is-mobile is-centered">
+			<div class="column has-text-centered">
+				<div class="slidecontainer">
+					<p>STIFFNESS: <span id="demo_width"></span></p>
+					<input type="range" min="3" max="10" value="7" class="slider" id="lineWidth">
+				</div>
+
+				<div class="slidecontainer">
+					<p>IMPULSE FORCE(N): <span id="demo_motion"></span></p>
+					<input type="range" min="40" max="100" value="75" class="slider" id="motion">
+				</div>
+
+				<div class="slidecontainer">
+					<p>MASS (Tonnes): <span id="demo_mass"></span></p>
+					<input type="range" min="1000" max="6000" value="3000" class="slider" id="mass">
+				</div>
+
+				<button id="play" class="action-button">Play</button>
+				<button id="pause" class="action-button">Pause</button>
+				<button id="restart" class="action-button">Restart</button>
+
+			</div>
+		</div>
+
+		<div class="columns is-mobile is-centered">
+			<div class="column has-text-centered">
+				<div class="hero is-small">
+					<div class="hero-body">
+						<canvas class="main" id="main"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="./js/main.js"></script>
+	</body>
 </html>
