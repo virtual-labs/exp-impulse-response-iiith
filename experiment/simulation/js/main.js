@@ -1,3 +1,5 @@
+'use strict';
+
 document.addEventListener('DOMContentLoaded', function () {
 
 	const playButton = document.getElementById('play');
@@ -62,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	slider_mas.oninput = function() {
 		output_mas.innerHTML = this.value;
 		text = Number(document.getElementById("mass").value);
-		mass_stiff = (0.2 * Number(document.getElementById("mass").value)) / 1000;
+		mass_stiff = (0.2 * Number(document.getElementById("mass").value)) / 100;
 		restart();
 	};	
 
@@ -114,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	let stiff = 1.05;
 	let mass_stiff = 0.6;
-	let text = 3000;
+	let text = 300;
 
 	const up = 400;
 	const buildY = 100;
