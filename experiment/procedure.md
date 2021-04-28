@@ -1,6 +1,6 @@
 Start the experiment with default values of impulse force and buildings' mass and stiffness. Pause the experiment after a few cycles and observe the response of SDOF by changing all the parameters.
 
-NOTE: The parameters used in the experiment do not use actual data and hence have not been given units for some parameter and are only used to observe variations in the simulation.
+NOTE: The parameters used in the experiment do not use actual data and are only used to observe variations in the simulation.
 
 **Observation 1:**
 
