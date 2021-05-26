@@ -1,1 +1,1 @@
-### Impulse Response of S.D.O.F system
+## Impulse Response of S.D.O.F system
