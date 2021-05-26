@@ -4,6 +4,7 @@ Here 6 types of Impulse forces are considered. They are,
 
 A step force jumps suddenly from zero to and stays constant at value. It is desired to determine the response of an undamped SDF system. Starting at rest to step force:
 
-[image](images/eq1.PNG)
+<img src="images/eq1.PNG"> 
+ 
 
 [Read More](doc/4.theory.pdf)
