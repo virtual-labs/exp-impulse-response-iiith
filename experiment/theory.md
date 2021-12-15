@@ -7,4 +7,4 @@ A step force jumps suddenly from zero to and stays constant at value. It is desi
 <img src="images/eq1.PNG"> 
  
 
-[Read More](doc/4.theory.pdf)
+[Read More](docs/4.theory.pdf)
