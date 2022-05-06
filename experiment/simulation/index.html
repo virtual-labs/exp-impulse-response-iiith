@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+		<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"> -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.6-b/css/style.min.css">
 		<link rel="stylesheet" href="./css/main.css">
 	</head>
 
@@ -16,24 +17,24 @@
 
 		<div class="columns is-mobile is-centered">
 			<div class="column has-text-centered">
-				<div class="slidecontainer">
+				<div class="v-slider">
 					<p>STIFFNESS: <span id="demo_width"></span></p>
-					<input type="range" min="3" max="10" value="7" class="slider" id="lineWidth">
+					<input type="range" min="3" max="10" value="7" class="v-slider" id="lineWidth">
 				</div>
 
-				<div class="slidecontainer">
+				<div class="v-slider">
 					<p>IMPULSE FORCE(N): <span id="demo_motion"></span></p>
-					<input type="range" min="40" max="100" value="75" class="slider" id="motion">
+					<input type="range" min="40" max="100" value="75" class="v-slider" id="motion">
 				</div>
 
-				<div class="slidecontainer">
+				<div class="v-slider">
 					<p>MASS (Tonnes): <span id="demo_mass"></span></p>
-					<input type="range" min="1000" max="6000" value="3000" class="slider" id="mass">
+					<input type="range" min="1000" max="6000" value="3000" class="v-slider" id="mass">
 				</div>
 
-				<button id="play" class="action-button">Play</button>
-				<button id="pause" class="action-button">Pause</button>
-				<button id="restart" class="action-button">Restart</button>
+				<button id="play" class="v-button">Play</button>
+				<button id="pause" class="v-button">Pause</button>
+				<button id="restart" class="v-button">Restart</button>
 
 			</div>
 		</div>
