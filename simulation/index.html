@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.6-b/css/style.min.css">
+		<link rel="stylesheet" href="./css/main.css">
+   </head>
+   <body class="page">
+      <div class="columns is-centered is-flex">
+         <div class="column mt-2 is-10-desktop is-10-tablet is-10-mobile has-text-centered">
+            <div class="column center-content">
+            </div>
+            <div class="columns is-mobile is-centered is-flex">
+               <div id="anime-demo" class="column has-text-centered controls">
+                  <button id="play" class="v-button">Play</button>
+					<button id="pause" class="v-button">Pause</button>
+					<button id="restart" class="v-button">Restart</button> 
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- -->
+      <div class="columns is-centered is-variable is-flex is-flex-wrap-wrap workspace">
+         <div id="apparatus" class="column has-text-centered is-2-desktop is-5-tablet is-5-mobile apparatus">
+            <div class="v-datalist-container">
+               <div class="v-datalist-title">Input Parameters</div>
+		 <div class="column">
+               <p>Stiffness (kN/m): <span id="demo_width"></span></p>
+						<input type="range" min="3" max="10" value="7" class="v-slider-full" id="lineWidth">
+						<p>Impulse Force (N): <span id="demo_motion"></span></p>
+						<input type="range" min="40" max="100" value="75" class="v-slider-full" id="motion">
+						<p>Mass (Tonnes): <span id="demo_mass"></span></p>
+						<input type="range" min="1000" max="6000" value="3000" class="v-slider-full" id="mass">
+</div>
+            </div>
+         </div>
+      
+         <div class="column has-text-centered is-9-desktop is-10-tablet is-10-mobile simulation v-canvas-container">
+            <div class="columns">
+               <div class="column">
+               	<canvas class="main" id="main" style="width: 100%; max-width: 700px; height: 100%"></canvas>
+
+               </div>
+            </div>
+            
+         </div>
+      </div>
+      <script src="./js/main.js"></script>
+      
+   <script src="../assets/js/iframeResize.js"></script></body>
+</html>
+
+
+
